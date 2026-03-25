@@ -6,20 +6,22 @@ cp -r /app/skills/* /root/.openclaw/skills/
 
 cat > /root/.openclaw/openclaw.json << ENDCONFIG
 {
-  "gateway": {
-    "mode": "local",
-    "bind": "lan"
+  "env": {
+    "ANTHROPIC_API_KEY": "ANTHROPIC_PLACEHOLDER"
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "anthropic/claude-sonnet-4-6"
+      }
+    }
   },
   "channels": {
     "telegram": {
+      "enabled": true,
       "botToken": "TELEGRAM_PLACEHOLDER",
       "dmPolicy": "open",
       "allowFrom": ["*"]
-    }
-  },
-  "providers": {
-    "anthropic": {
-      "apiKey": "ANTHROPIC_PLACEHOLDER"
     }
   }
 }
