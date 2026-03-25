@@ -1,7 +1,5 @@
 FROM node:22-slim
 RUN npm install -g openclaw@latest
 WORKDIR /app
-COPY start.sh /app/start.sh
-RUN chmod +x /app/start.sh
 ENV PORT=7860
-CMD ["/app/start.sh"]
+CMD ["/bin/sh", "-c", "mkdir -p /root/.openclaw && echo '{\"gateway\":{\"mode\":\"local\",\"bind\":\"0.0.0.0\"},\"channels\":{\"telegram\":{\"botToken\":\"'$TELEGRAM_BOT_TOKEN'\",\"dmPolicy\":\"open\",\"allowFrom\":[\"*\"]}},\"providers\":{\"anthropic\":{\"apiKey\":\"'$ANTHROPIC_API_KEY'\"}}}' > /root/.openclaw/openclaw.json && openclaw gateway --allow-unconfigured"]
