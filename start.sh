@@ -8,7 +8,7 @@ cat > /root/.openclaw/openclaw.json << ENDCONFIG
 {
   "gateway": {
     "mode": "local",
-    "bind": "0.0.0.0"
+    "bind": "lan"
   },
   "channels": {
     "telegram": {
