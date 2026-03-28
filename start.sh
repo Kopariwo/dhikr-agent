@@ -12,7 +12,7 @@ cat > /root/.openclaw/openclaw.json << ENDCONFIG
   "agents": {
     "defaults": {
       "model": {
-        "primary": "anthropic/claude-sonnet-4-6"
+        "primary": "anthropic/claude-haiku-4-5"
       }
     }
   },
@@ -21,7 +21,7 @@ cat > /root/.openclaw/openclaw.json << ENDCONFIG
       "enabled": true,
       "botToken": "TELEGRAM_PLACEHOLDER",
       "dmPolicy": "open",
-      "allowFrom": ["*"]
+      "allowFrom": ["8738376095"]
     }
   }
 }
