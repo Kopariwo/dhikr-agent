@@ -20,7 +20,7 @@ cat > /root/.openclaw/openclaw.json << ENDCONFIG
     "telegram": {
       "enabled": true,
       "botToken": "TELEGRAM_PLACEHOLDER",
-      "dmPolicy": "open",
+      "dmPolicy": "pairing",
       "allowFrom": ["8738376095"]
     }
   }
