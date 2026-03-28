@@ -123,3 +123,30 @@ User: Scan Polymarket for good opportunities
 3. Pick the top 3 most interesting opportunities
 4. Present them in the alert format above
 5. Ask the user which ones they want to explore further
+
+6. ## Position Sizing with Kelly Criterion
+
+For EVERY trade recommendation, calculate the suggested position size:
+
+### Formula
+Kelly % = (bp - q) / b
+- b = (1 / market_price) - 1
+- p = your estimated probability of winning
+- q = 1 - p
+
+### Rules
+- Always use QUARTER Kelly (divide result by 4) for safety
+- Assume starting bankroll of $50 unless user specifies otherwise
+- Never recommend more than 10% of bankroll on one trade
+- Include the Kelly calculation in every alert
+
+### Example
+Market price: NO @ 85 cents. Your fair value: NO @ 92 cents.
+- b = (1/0.85) - 1 = 0.176
+- p = 0.92, q = 0.08
+- Kelly = (0.176 × 0.92 - 0.08) / 0.176 = 46.8%
+- Quarter Kelly = 11.7%
+- On $50 bankroll = $5.85 position
+- Cap at 10% = $5.00 max
+
+Add to alert: "Suggested position: $5.00 (Quarter Kelly, 10% bankroll)"
