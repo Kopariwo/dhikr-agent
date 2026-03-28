@@ -7,7 +7,8 @@ cp -r /app/skills/* /root/.openclaw/skills/
 cat > /root/.openclaw/openclaw.json << ENDCONFIG
 {
   "env": {
-    "ANTHROPIC_API_KEY": "ANTHROPIC_PLACEHOLDER"
+    "ANTHROPIC_API_KEY": "ANTHROPIC_PLACEHOLDER",
+    "POLYMARKET_PRIVATE_KEY": "PRIVKEY_PLACEHOLDER"
   },
   "agents": {
     "defaults": {
@@ -29,6 +30,7 @@ ENDCONFIG
 
 sed -i "s/TELEGRAM_PLACEHOLDER/$TELEGRAM_BOT_TOKEN/" /root/.openclaw/openclaw.json
 sed -i "s/ANTHROPIC_PLACEHOLDER/$ANTHROPIC_API_KEY/" /root/.openclaw/openclaw.json
+sed -i "s/PRIVKEY_PLACEHOLDER/$POLYMARKET_PRIVATE_KEY/" /root/.openclaw/openclaw.json
 
 echo "Config written successfully!"
 echo "Skills installed:"
